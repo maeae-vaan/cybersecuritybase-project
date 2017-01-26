@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Registrations</title>
+    </head>
+    <body>
+        <h1>Registrations</h1>
+
+        <table border="1" th:style="${isAdmin ? '' : 'display: none'}">
+            <tr>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+            <tr th:each="signup : ${signups}">
+                <td th:utext="${signup.username}"></td>
+                <td th:utext="${signup.name}"></td>
+                <td th:utext="${signup.address}"></td>
+            </tr>
+        </table>
+    </body>
+</html>

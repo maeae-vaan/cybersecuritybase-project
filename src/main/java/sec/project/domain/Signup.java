@@ -6,6 +6,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 public class Signup extends AbstractPersistable<Long> {
 
+    private String username;
     private String name;
     private String address;
 
@@ -13,10 +14,19 @@ public class Signup extends AbstractPersistable<Long> {
         super();
     }
 
-    public Signup(String name, String address) {
+    public Signup(final String username, String name, String address) {
         this();
+        this.username = username;
         this.name = name;
         this.address = address;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.name = name;
     }
 
     public String getName() {
